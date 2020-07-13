@@ -24,28 +24,28 @@ const arr = [
         id: 4,
         image: "https://images.unsplash.com/photo-1483995564125-85915c11dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=852&q=80",
         name: "Al Bundy",
-        occupation: "Web designer",
+        occupation: "UI Specialist",
         review: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim at quam illo dolor itaque tempora quasi adipisci eligendi, architecto sunt vero ullam magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
         id: 5,
         image: "https://images.unsplash.com/photo-1455103433115-33cd90e2a3d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
         name: "George M.",
-        occupation: "Web designer",
+        occupation: "SEO Specialist",
         review: "Dignissimos voluptatum aliquam optio consectetur atque!. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim at quam illo dolor itaque tempora quasi adipisci eligendi, architecto sunt vero ullam magni."
     },
     {
         id: 6,
         image: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
         name: "Elaine Bennes",
-        occupation: "Web designer",
+        occupation: "HR Recruiter",
         review: "Animi enim at quam illo dolor itaque tempora quasi adipisci eligendi, architecto sunt vero ullam magni. Dignissimos voluptatum aliquam optio consectetur atque! Lorem, ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
         id: 7,
         image: "https://images.unsplash.com/photo-1485528562718-2ae1c8419ae2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=781&q=80",
         name: "Kosmo Kramer",
-        occupation: "Web designer",
+        occupation: "Marketing",
         review: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim at quam illo dolor itaque tempora quasi adipisci eligendi, architecto sunt vero ullam magni. Dignissimos voluptatum aliquam optio consectetur atque!"
     }
 ]
