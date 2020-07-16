@@ -1,3 +1,4 @@
+// local reviews data
 const arr = [
     {
         id: 1,
@@ -50,18 +51,34 @@ const arr = [
     }
 ]
 
-const btnLeft = document.getElementById("left");
-const btnRight = document.getElementById("right");
-const btnRandom = document.getElementById("random");
-const css = document.getElementById("circle");
+// select items
+
 const nameOfUser = document.getElementById("name");
 const occupation = document.getElementById("occupation");
 const review = document.getElementById("review");
+
+const btnLeft = document.getElementById("left");
+const btnRight = document.getElementById("right");
+const btnRandom = document.getElementById("random");
+
+const css = document.getElementById("circle");
 const src = document.getElementById("container");
+
+// set starting item
+
+let currentItem = 0;
 
 let increase = arr[0].id - 1;
 let decrease = arr[0].id + 6;
 
+//load initial item 
+window.addEventListener("DOMContentLoaded", () => {
+    const item = arr[currentItem];
+    css.src = item.image;
+    nameOfUser.textContent = item.name;
+    occupation.textContent = item.occupation;
+    review.textContent = item.review;
+});
 
 const increaseNumber = () => {
     increase = increase + 1;
@@ -77,30 +94,30 @@ const decreaseNumber = () => {
     }
 }
 const randomize = () => {
-      const randomize =  Math.floor(Math.random() *arr.length);
-      const userName = arr[randomize].name;
-      const userImg = arr[randomize].image;
-      const userOcupation = arr[randomize].occupation;
-      const userReview = arr[randomize].review;
+    const randomize = Math.floor(Math.random() * arr.length);
+    const userName = arr[randomize].name;
+    const userImg = arr[randomize].image;
+    const userOcupation = arr[randomize].occupation;
+    const userReview = arr[randomize].review;
 
-      nameOfUser.textContent = userName;
-      css.src = userImg;
-      occupation.textContent = userOcupation;
-      review.textContent = userReview;
-      
+    nameOfUser.textContent = userName;
+    css.src = userImg;
+    occupation.textContent = userOcupation;
+    review.textContent = userReview;
+
 }
 
 const left = () => {
-      decreaseNumber();
-      const userName = arr[decrease].name;
-      const userImg = arr[decrease].image;
-      const userOcupation = arr[decrease].occupation;
-      const userReview = arr[decrease].review;
+    decreaseNumber();
+    const userName = arr[decrease].name;
+    const userImg = arr[decrease].image;
+    const userOcupation = arr[decrease].occupation;
+    const userReview = arr[decrease].review;
 
-      nameOfUser.textContent = userName;
-      css.src = userImg;
-      occupation.textContent = userOcupation;
-      review.textContent = userReview;
+    nameOfUser.textContent = userName;
+    css.src = userImg;
+    occupation.textContent = userOcupation;
+    review.textContent = userReview;
 }
 
 const right = () => {
@@ -119,4 +136,3 @@ const right = () => {
 btnLeft.addEventListener("click", left);
 btnRight.addEventListener("click", right);
 btnRandom.addEventListener("click", randomize)
-
