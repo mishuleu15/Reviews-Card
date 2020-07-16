@@ -1,6 +1,5 @@
 // local reviews data
-const arr = [
-    {
+const arr = [{
         id: 1,
         name: "John Connor",
         image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
@@ -52,7 +51,6 @@ const arr = [
 ]
 
 // select items
-
 const nameOfUser = document.getElementById("name");
 const occupation = document.getElementById("occupation");
 const review = document.getElementById("review");
@@ -65,74 +63,43 @@ const css = document.getElementById("circle");
 const src = document.getElementById("container");
 
 // set starting item
-
 let currentItem = 0;
-
-let increase = arr[0].id - 1;
-let decrease = arr[0].id + 6;
 
 //load initial item 
 window.addEventListener("DOMContentLoaded", () => {
-    const item = arr[currentItem];
+    showPerson(currentItem);
+});
+
+// show person based on item
+const showPerson = (person) => {
+    const item = arr[person];
     css.src = item.image;
     nameOfUser.textContent = item.name;
     occupation.textContent = item.occupation;
     review.textContent = item.review;
+}
+
+
+// show next person
+btnRight.addEventListener('click', () => {
+    currentItem++;
+    if (currentItem > arr.length - 1) {
+        currentItem = 0;
+    }
+    showPerson(currentItem);
 });
 
-const increaseNumber = () => {
-    increase = increase + 1;
-    if (increase == 7) {
-        increase = arr[0].id - 1;
+//show previous person
+btnLeft.addEventListener('click', () => {
+    currentItem--;
+    if (currentItem < 0) {
+        currentItem = arr.length - 1;
     }
-}
+    showPerson(currentItem);
+});
 
-const decreaseNumber = () => {
-    decrease = decrease - 1;
-    if (decrease == -1) {
-        decrease = arr[0].id + 5;
-    }
-}
-const randomize = () => {
-    const randomize = Math.floor(Math.random() * arr.length);
-    const userName = arr[randomize].name;
-    const userImg = arr[randomize].image;
-    const userOcupation = arr[randomize].occupation;
-    const userReview = arr[randomize].review;
-
-    nameOfUser.textContent = userName;
-    css.src = userImg;
-    occupation.textContent = userOcupation;
-    review.textContent = userReview;
-
-}
-
-const left = () => {
-    decreaseNumber();
-    const userName = arr[decrease].name;
-    const userImg = arr[decrease].image;
-    const userOcupation = arr[decrease].occupation;
-    const userReview = arr[decrease].review;
-
-    nameOfUser.textContent = userName;
-    css.src = userImg;
-    occupation.textContent = userOcupation;
-    review.textContent = userReview;
-}
-
-const right = () => {
-    increaseNumber();
-    const userName = arr[increase].name;
-    const userImg = arr[increase].image;
-    const userOcupation = arr[increase].occupation;
-    const userReview = arr[increase].review;
-
-    nameOfUser.textContent = userName;
-    css.src = userImg;
-    occupation.textContent = userOcupation;
-    review.textContent = userReview;
-}
-
-btnLeft.addEventListener("click", left);
-btnRight.addEventListener("click", right);
-btnRandom.addEventListener("click", randomize)
+// show random person
+btnRandom.addEventListener('click', () => {
+    currentItem = Math.floor(Math.random() * arr.length);
+    showPerson(currentItem);
+})
